@@ -1,3 +1,4 @@
-from tokenizer import SimpleTokenizer
+from .tokenizer import SimpleTokenizer
+
 
 __all__ = ['SimpleTokenizer']
