@@ -2,11 +2,15 @@
 Jumping-LLM-Flash - библиотека для быстрой сборки маленьких языковых моделей, с фокусом на оптимизацию обучения, инференса, и работы с данными.
 А также на уменьшение количества кода для построения полного пайплайна. 
 
-# Установка
+
+Jumping-LLM-Flash is a library for quickly building small language models, focusing on optimizing training, inference, and data manipulation.
+It also aims to reduce the amount of code needed to build a complete pipeline.
+
+# Установка(Installation)
 ```bash
 git https://github.com/companys1234/Jumping_LLM_Flash.git
 ```
-# Тестовые примеры
+# Тестовые примеры(Test cases)
 LLaMa 2
 
 
