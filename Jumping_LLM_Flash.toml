@@ -1,0 +1,39 @@
+# pyproject.toml
+[build-system]
+requires = ["hatchling"]  # или setuptools>=61.0
+build-backend = "hatchling.build"
+
+[project]
+name = "Jumping-LLM-Flash"
+version = "1.0.0"
+description = "Jumping-LLM-Flash is a library for quickly building small language models, focusing on optimizing training, inference, and data manipulation.
+It also aims to reduce the amount of code needed to build a complete pipeline."
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "companys1234"}
+]
+keywords = ["LLM", "AI", "Fast", "Deep Learning"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+]
+dependencies = [
+	pytorch >= 2.9.1,
+	numpy >= 2.4.0,
+	pytest >= 9.0.2,
+	python >= 3.14.0
+]
+
+[project.urls]
+Homepage = "https://github.com/companys1234/Jumping_LLM_Flash"
+Documentation = "https://github.com/companys1234/Jumping_LLM_Flash/blob/main/README.md"
+Repository = "https://github.com/companys1234/Jumping_LLM_Flash"
+Issues = "https://github.com/companys1234/Jumping_LLM_Flash/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/your_package"]
