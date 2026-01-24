@@ -4,10 +4,10 @@ import torch.nn.functional as F
 
 
 class GQA(nn.Module):
-    def __init__(self, d_model, num_heads, num_kv_heads=None):
+    def __init__(self, d_model, num_heads, num_kv_heads=None, pos_enc = None):
         super().__init__()
         assert d_model % num_heads == 0, "d_model должно делиться на num_heads"
-
+        self.pos_enc = pos_enc
         self.d_model = d_model
         self.num_heads = num_heads
         self.num_kv_heads = num_kv_heads if num_kv_heads is not None else num_heads
@@ -28,10 +28,13 @@ class GQA(nn.Module):
 
         K = self.W_K(x)
         V = self.W_V(x)
-
+        if self.pos_enc is not None:
+          Q = self.pos_enc(Q)
+          K = self.pos_enc(K)
         Q = Q.view(batch_size, seq_len, self.num_heads, self.d_k).transpose(1, 2)
         K = K.view(batch_size, seq_len, self.num_kv_heads, self.d_k).transpose(1, 2)
         V = V.view(batch_size, seq_len, self.num_kv_heads, self.d_k).transpose(1, 2)
+
 
         # Повторяем Key/Value для группированного внимания
         if self.num_kv_heads != self.num_heads:
@@ -56,7 +59,9 @@ class GQA(nn.Module):
 
 
 
+
 """model = GQA(d_model=100, num_heads=4, num_kv_heads=2)  # 4 query heads, 2 key/value heads
 x = torch.rand(32, 10, 100)  # (batch, seq_len, d_model)
 out = model(x)
+
 print(out.shape)  """
