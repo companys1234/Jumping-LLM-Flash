@@ -11,9 +11,17 @@ It also aims to reduce the amount of code needed to build a complete pipeline.
 git https://github.com/companys1234/Jumping_LLM_Flash.git
 ```
 # Тестовые примеры(Test cases)
-LLaMa 2
+LLaMa 2 🦙
 
 
 <a href="https://colab.research.google.com/drive/1J0AtBk9unn7vXKNoF5-NixcIFuWXK5Pw?usp=sharing">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
+</a>
+
+
+Grok 1 🪐
+
+
+<a href="https://colab.research.google.com/drive/1GMzXgc83RSJmvEabio6oEdlEC1f_TqtS?usp=sharing">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
 </a>
